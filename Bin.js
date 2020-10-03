@@ -6,28 +6,24 @@ class Bin {
   this.dustbinWidth=200;
   this.dustbinHeight=213;
   this.wallThickness=20;
+
+  this.body = Bodies.rectangle(this.x, this.y, this.dustbinWidth, this.dustbinHeight, {isStatic: true});
   
-  this.image=loadImage("bin.png")
-  this.bottomBody=Bodies.rectangle(this.x, this.y, this.dustbinWidth, this.wallThickness, {isStatic:true})
+
+  this.bottomBody = Bodies.rectangle(this.x, this.y, this.dustbinWidth, this.wallThickness, {isStatic:true});
   
   }
 
   display() {
 
     var pos = this.bottomBody.position;
-    var angle = this.bottomBody.angle;
+    var bottomImage = loadImage("bin.png");
+     image(this.x, this.y, bottomImage);
 
     push();
-
     translate(pos.x, pos.y);
-    //rotate(angle);
-    rectMode(CENTER)
-    //strokeWeight(4);
-    angleMode(RADIANS)
-    fill(255)
-
     imageMode(CENTER);
-			image(this.image, 0,-this.dustbinHeight/2,this.dustbinWidth, this.dustbinHeight)
+    rect(0, 0, this.dustbinWidth, this.dustbinHeight);
 
     pop();
   }

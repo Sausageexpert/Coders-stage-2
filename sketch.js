@@ -14,7 +14,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 function preload(){
-	//binImage = loadImage("bin.png");
+	binImage = loadImage("bin.png");
 }
 
 function setup() {
@@ -29,8 +29,8 @@ function setup() {
 	garbage = new Waste(50, 300, 20, 20);
 	ground = new Ground(400, 650, 800, 10);
 
-	//bin1 = new Bin(600, 592);
-	//bin2 = new Bin(700, 592);
+	bin1 = new Bin(600, 592);
+	bin2 = new Bin(700, 592);
 	bin3 = new Bin(650, 640);
 
 	
@@ -44,8 +44,8 @@ function draw() {
 	ground.display();
 	
 	garbage.display();
-	//bin1.display();
-	//bin2.display();
+	bin1.display();
+	bin2.display();
 	bin3.display();
 
 	drawSprites();
@@ -58,7 +58,7 @@ function keyPressed() {
 
 		Matter.Body.applyForce(garbage.body, garbage.body.position, { x: 18, y: -25 });
 
-		
+
 	}
 }
 
